@@ -85,9 +85,10 @@ some vs. any
 - change to any when you need to store arbitrary values (arbitrary concrete types instances)
 
 
-some	                            any
-holds a fixed concrete type     	holds an arbitrary concrete type
-guarantees type relationships   	erases type relationships
+some	                            
+- holds a fixed concrete type     	
+- guarantees type relationships   	
 
-
-
+any
+- holds an arbitrary concrete type
+- erases type relationships
