@@ -13,18 +13,76 @@ Polymorphism
 - The different forms of polymorphism:
 
 
-ad-hoc polymorphism: 
+  ad-hoc polymorphism: 
 - the same function call can mean different things depending on the argument type
 - Swift function overloading
 
 
-subtype polymorphism:
+  subtype polymorphism:
 - code operating on a supertype can have different behavior based on the specific subtype the code is using at runtime
 - Subclassing in Swift, where a class overrides a method of their superclass
 
 
-parametric polymorphism:
+  parametric polymorphism:
 - achieved using generics
 - Generic code uses type parameters to allow writing one piece of code that works with different types, and concrete types themselves are used as arguments
+
+protocol
+
+- interface that represents capabilities
+- separates ideas from implementation details
+- abstraction tool that describes the functionality of conforming types
+- separates ideas from implementation details
+- each capability maps to a protocol requirement
+- the name of the protocol should represent the category of types we're describing
+
+
+associatedtype:
+- serves as a placeholder for a concrete type
+- associated types depend on the specific type that conforms to the protocol
+
+
+Opaque type vs. underlying type
+
+- Opaque type - abstract type that represents a placeholder for a specific concrete type
+- underlying type - specific concrete type that is substituted in the opaque type
+- For values with opaque type, the underlying type is fixed for the scope of the value
+- generic code using the value is guaranteed to get the same underlying type each time the value is accessed
+- opaque type can be used both for inputs and outputs
+
+
+some:
+
+- we can express an abstract type in terms of the protocol conformance by writing some xxx
+- all three declarations above are identical, but the newer one is much easier to read and understand
+- the some keyword can be used in parameter and result types
+- with some, there is a specific underlying type that cannot vary
+
+
+any:
+
+- if we need to express an arbitrary type a protocol, for example to store multiple into an array, we can use any
+- with any, the underlying type can vary at runtime
+- any xxx is a single static type that has the capability to store any concrete X-conforming type dynamically, which allows us to use subtype polymorphism with value types
+- to allow for any required flexible storage, the any X type has a special representation in memory
+
+you can think of this representation as a fixed box:
+- if the concrete type can fit within the box, it will be stored there
+- the box will store a pointer to the instance otherwise
+- the static type any X that can dynamically store any concrete X type is called an existential type
+- the strategy of using the same representation for different concrete types is called type erasure
+- the concrete type is said to be erased at compile time, and the concrete type is only known at runtime
+
+
+type erasure: 
+eliminates the type-level distinction between different X-conforming instances, which allows us to use values with different dynamic types interchangeably as the same static type
+
+
+some vs. any
+
+-the compiler can convert an instance of any X to some x by unboxing the underlying value and passing it directly to the some X parameter
+- use some by default
+- change to any when you need to store arbitrary values (arbitrary concrete types instances)
+
 
 
