@@ -27,7 +27,7 @@
 - achieved using generics
 - Generic code uses type parameters to allow writing one piece of code that works with different types, and concrete types themselves are used as arguments
 
-## protocol
+## protocol 
 
 - interface that represents capabilities
 - separates ideas from implementation details
