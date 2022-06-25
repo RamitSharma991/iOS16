@@ -123,4 +123,4 @@ type erasure replaces these associated types with corresponding existential type
 
 ## Distributed actors
 - an extension of Swift’s actor model that simplifies development of distributed systems. 
-- designed to protect you from low-level data races across multiple processes e.g., communication among multiple devices or servers in a cluster
+- designed to protect you from low-level data races across multiple processes eg. communication among multiple devices or servers in a cluster
