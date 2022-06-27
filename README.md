@@ -124,3 +124,15 @@ type erasure replaces these associated types with corresponding existential type
 ## Distributed actors
 - an extension of Swift’s actor model that simplifies development of distributed systems. 
 - designed to protect you from low-level data races across multiple processes eg. communication among multiple devices or servers in a cluster
+- By using distributed actors, we're able to establish a channel between two processes and send messages between them
+- Distributed actors still isolate their state and still can only communicate using asynchronous messages
+- It's ok to have multiple distributed actors in the same process
+- Distributed actors are just actors, but can participate in remote interactions whenever necessary
+- Distributed actors always belong to some distributed actor system, which handles all the serialization and networking necessary to perform remote calls 
+- Every distributed actor is assigned an id, uniquely identify said actor in the entire distributed actor system that it is part of.
+- ids are assigned by the distributed actor system as the actor is initialized, and later managed by that system (we cannot declare or assign the id property manually)
+
+#### Location transparency: 
+- ability to be potentially remote without having to change how we interact with such distributed actor
+- regardless where a distributed actor is located, we can interact with it the same way
+- allows us to transparently move our actors, without having to change their implementation
