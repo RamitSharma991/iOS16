@@ -74,18 +74,18 @@ you can think of this representation as a fixed box:
 - the concrete type is said to be erased at compile time, and the concrete type is only known at runtime
 
 
-some vs. any
+#### some vs. any
 
 -the compiler can convert an instance of any X to some x by unboxing the underlying value and passing it directly to the some X parameter
 - use some by default
 - change to any when you need to store arbitrary values (arbitrary concrete types instances)
 
 
-some	                            
+#### some	                            
 - holds a fixed concrete type     	
 - guarantees type relationships   	
 
-any
+#### any
 - holds an arbitrary concrete type
 - erases type relationships
 
