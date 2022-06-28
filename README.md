@@ -136,3 +136,9 @@ type erasure replaces these associated types with corresponding existential type
 - ability to be potentially remote without having to change how we interact with such distributed actor
 - regardless where a distributed actor is located, we can interact with it the same way
 - allows us to transparently move our actors, without having to change their implementation
+
+## Road to distributed actors
+- Pick a local actor that you'd like to move to distribute actor
+- Turn it into a (still local) distributed actor
+- Move the distributed actor ActorSystem to be remote
+- Setup server side app
