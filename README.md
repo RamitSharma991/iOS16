@@ -113,7 +113,6 @@ type erasure replaces these associated types with corresponding existential type
 - By understanding your data model, you can use same-type requirements to define equivalences between these different nested associated types
 - Generic code can then rely on these relationships when chaining together multiple calls to protocol requirements
 
-
 ## distributed actors
 
 
