@@ -77,6 +77,7 @@ you can think of this representation as a fixed box:
 
 #### some vs. any
 
+
 -the compiler can convert an instance of any X to some x by unboxing the underlying value and passing it directly to the some X parameter
 - use some by default
 - change to any when you need to store arbitrary values (arbitrary concrete types instances)
