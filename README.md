@@ -147,4 +147,6 @@ type erasure replaces these associated types with corresponding existential type
 
 # SwiftUI
 
+## Swift Charts
+
 
