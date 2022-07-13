@@ -161,7 +161,11 @@ type erasure replaces these associated types with corresponding existential type
 - Supports SwiftUI animations (e.g. animate between different data collections but same bar chart view)
 - Use .foregroundStyle(by: to group data by color → auto-generated legend for the colors
 - Easy to change from BarMark to PointMark or LineMark (great for prototyping charts!)
-- Also .symbol(by: a value available to use square/circle instead of color to differentiate data form each other Marks: Bar, Point, Line
+- Also .symbol(by: a value available to use square/circle instead of color to differentiate data form each other 
+- Marks: Bar, Point, Line
+- Mark Properties: X Position, Y Position, Foreground Style, Symbol
+- More Marks available: Area, Rule, Rectangle
+- More Mark Properties available: Symbol Size, Line Style
 
 
 
