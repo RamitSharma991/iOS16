@@ -147,7 +147,23 @@ type erasure replaces these associated types with corresponding existential type
 
 # SwiftUI
 
-## Swift Charts
+## Swift Charts 
+
+- Chart is the main outside wrapper 
+- BarMark with x and y positions and .value data
+- first argument of value is description, second the value
+- make data types Identifiable to use in Charts
+- supports ForEach for Identifiable data collections
+- Implicit forEach via a Chart initializer taking a data collection
+- Charts chooses an appropriate visualization automatically
+- Adapts to dynamic type, device sizes, orientations, dark mode and supports accessibility automatically
+- .value also accepts a unit for types like Date, e.g. .day
+- Supports SwiftUI animations (e.g. animate between different data collections but same bar chart view)
+- Use .foregroundStyle(by: to group data by color → auto-generated legend for the colors
+- Easy to change from BarMark to PointMark or LineMark (great for prototyping charts!)
+- Also .symbol(by: a value available to use square/circle instead of color to differentiate data form each other Marks: Bar, Point, Line
+
+
 
 
 
