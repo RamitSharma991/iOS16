@@ -167,5 +167,8 @@ type erasure replaces these associated types with corresponding existential type
 - Mark Properties: X Position, Y Position, Foreground Style, Symbol
 - More Marks available: Area, Rule, Rectangle
 - More Mark Properties available: Symbol Size, Line Style
+- Marks and composition: a Mark is a graphical element that represents data
+- Chart is a SwiftUI view used as the wrapper for charts
+- Provide multiple BarMark views to show multiple bars
 
 
