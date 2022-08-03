@@ -175,4 +175,6 @@ type erasure replaces these associated types with corresponding existential type
 - Chart is a SwiftUI view used as the wrapper for charts
 - Provide multiple BarMark views to show multiple bars
 
+## Navigation
+
 
