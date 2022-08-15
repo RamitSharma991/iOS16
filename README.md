@@ -177,4 +177,34 @@ type erasure replaces these associated types with corresponding existential type
 
 ## Navigation
 
+### Deprecation notice
+- All previous navigation APIs are deprecated:
+- NavigationView is replaced by two new containers, NavigationStack and NavigationSplitView (more on this later)
+- NavigationLink still exists, has a completely different API and behavior, and is no longer mandatory to use
+
+### New navigation APIs
+#### Containers
+
+- with the new containers, we have a single binding for managing their stack state/path
+- this single binding represents all the values pushed onto the stack, think of it as an array of screens
+- The new NavigationLink APIs append values to this binding
+- you can directly mutate this binding yourself (just add/remove elements from this state/path array)
+- You can programmatically push/pop multiple screens at once
+- You can programmatically deep link
+- You can pop to the root view by removing all the items
+
+Two new containers:
+
+- NavigationStack - for a single push-pop stack
+- NavigationSplitView - for multi-column apps
+- automatically adapts into a single-column stack on iPhone, into Slide Over on iPad, Apple Watch and Apple TV
+- provides configuration options that let you:
+- customize column widths (see navigationSplitViewColumnWidth(_:) and similar modifiers)
+- control sidebar presentation and show/hide columns (see NavigationSplitViewVisibility and associated modifiers)
+
+NavigationSplitView has two initializers:
+
+- To create a two-column navigation split view, use init(sidebar:detail:)
+- To create a three-column view, use the init(sidebar:content:detail:)
+
 
