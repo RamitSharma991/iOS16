@@ -207,4 +207,13 @@ NavigationSplitView has two initializers:
 - To create a two-column navigation split view, use init(sidebar:detail:)
 - To create a three-column view, use the init(sidebar:content:detail:)
 
+NavigationLink
+
+- appends elements onto the stack it appears in
+- no longer accepts a destination parameter (we use the new navigationDestination(for:destination:) modifier instead)
+is no longer needed, programmatically append things to the $path state yourself instead
+- navigationDestination(for:destination:) modifier
+- declares the type of the presented data that it's responsible for
+- takes in a view builder that describes what view to push onto the stack when a instance of that data is presented
+
 
