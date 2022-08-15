@@ -215,5 +215,9 @@ is no longer needed, programmatically append things to the $path state yourself 
 - navigationDestination(for:destination:) modifier
 - declares the type of the presented data that it's responsible for
 - takes in a view builder that describes what view to push onto the stack when a instance of that data is presented
+- Every navigation stack keeps track of a path that represents all the data that the stack is showing
+- When the stack shows its root view, the path is empty
+- the stack also keeps track of all the navigation destinations declared inside it, or inside any view pushed onto the stack
+- if you'd like to use this path yourself (e.g., for programmatic navigation), use the new type-erasing NavigationPath collection where you can push values of different types
 
 
