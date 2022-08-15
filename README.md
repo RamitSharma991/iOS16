@@ -2,8 +2,6 @@
 
 ## Swift Generics
 
-
-
 - Generics are here to abstract away the details of a specific type
 - if you find yourself writing overloads with repetitive implementations, it might be a sign to that you need to generalize
 - Start with concrete types, generalize when needed
@@ -14,19 +12,13 @@
 - allows one piece of code to have many behaviors depending on how the code is used
 - The different forms of polymorphism:
 
-
-
-
  ### ad-hoc polymorphism: 
 - the same function call can mean different things depending on the argument type
 - Swift function overloading
 
-
  ### subtype polymorphism:
 - code operating on a supertype can have different behavior based on the specific subtype the code is using at runtime
 - Subclassing in Swift, where a class overrides a method of their superclass
-
-
 
  ### parametric polymorphism:
 - achieved using generics
@@ -41,23 +33,18 @@
 - each capability maps to a protocol requirement
 - the name of the protocol should represent the category of types we're describing
 
-
 ### associatedtype:
 - serves as a placeholder for a concrete type
 - associated types depend on the specific type that conforms to the protocol
 
-
 ### Opaque type vs. underlying type
-
 - Opaque type - abstract type that represents a placeholder for a specific concrete type
 - underlying type - specific concrete type that is substituted in the opaque type
 - For values with opaque type, the underlying type is fixed for the scope of the value
 - generic code using the value is guaranteed to get the same underlying type each time the value is accessed
 - opaque type can be used both for inputs and outputs
 
-
 ### some:
-
 - we can express an abstract type in terms of the protocol conformance by writing some xxx
 - all three declarations above are identical, but the newer one is much easier to read and understand
 - the some keyword can be used in parameter and result types
@@ -65,7 +52,6 @@
 
 
 ### any:
-
 - if we need to express an arbitrary type a protocol, for example to store multiple into an array, we can use any
 - with any, the underlying type can vary at runtime
 - any xxx is a single static type that has the capability to store any concrete X-conforming type dynamically, which allows us to use subtype polymorphism with value types
@@ -80,9 +66,7 @@ you can think of this representation as a fixed box:
 
 
 #### some vs. any
-
-
--the compiler can convert an instance of any X to some x by unboxing the underlying value and passing it directly to the some X parameter
+- the compiler can convert an instance of any X to some x by unboxing the underlying value and passing it directly to the some X parameter
 - use some by default
 - change to any when you need to store arbitrary values (arbitrary concrete types instances)
 
@@ -97,7 +81,6 @@ you can think of this representation as a fixed box:
 
 
 ### Type erasure: 
-
 eliminates the type-level distinction between different X-conforming instances, which allows us to use values with different dynamic types interchangeably as the same static type.
 
 - when you call a method returning an associated type on an existential type, the compiler will use
@@ -105,24 +88,17 @@ eliminates the type-level distinction between different X-conforming instances, 
 type erasure replaces these associated types with corresponding existential types that have equivalent constraints
 
 ### Type erasure semantics
-
 - Producing position: associatedtypes appearing in the result of a protocol method declaration are in producing position
 - The type any xxx is called the upper bound of the associated CommodityType
 - the actual concrete type that is returned from xxxx() can safely convert to the upper bound
 - type erasure does not allow us to work with associated types in consuming position instead, you must unbox the existential any type by passing it to a function that takes an opaque some type
 
 ### Identify type relationships
-
 - every protocol has a Self type, which stands for the concrete conforming type
 - we can express the relationship between associatedtypes using a same-type requirement, written in a where clause
 - A same-type requirement expresses a static guarantee that two different, possibly nested associated types must in fact be the same concrete type
 - By understanding your data model, you can use same-type requirements to define equivalences between these different nested associated types
 - Generic code can then rely on these relationships when chaining together multiple calls to protocol requirements
-
-## distributed actors
-
-
-
 
 ## Swift Actors
 - designed to protect you from low-level data races in the same process
@@ -219,5 +195,11 @@ is no longer needed, programmatically append things to the $path state yourself 
 - When the stack shows its root view, the path is empty
 - the stack also keeps track of all the navigation destinations declared inside it, or inside any view pushed onto the stack
 - if you'd like to use this path yourself (e.g., for programmatic navigation), use the new type-erasing NavigationPath collection where you can push values of different types
+
+Persistent state
+
+- encapsulate your navigation state into a Codable model
+- use SceneStorage to save and restore that state
+- restore data via .task:
 
 
