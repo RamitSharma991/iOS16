@@ -180,6 +180,7 @@ Two new containers:
 - customize column widths (see navigationSplitViewColumnWidth(_:) and similar modifiers)
 - control sidebar presentation and show/hide columns (see NavigationSplitViewVisibility and associated modifiers)
 
+
 NavigationSplitView has two initializers:
 
 - To create a two-column navigation split view, use init(sidebar:detail:)
