@@ -8,8 +8,6 @@
 
 ## Polymorphism
 
-
-
 - ability of abstract code to behave differently for different concrete types
 - allows one piece of code to have many behaviors depending on how the code is used
 - The different forms of polymorphism:
