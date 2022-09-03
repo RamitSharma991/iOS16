@@ -204,5 +204,3 @@ Persistent state
 - encapsulate your navigation state into a Codable model
 - use SceneStorage to save and restore that state
 - restore data via .task:
-
-
