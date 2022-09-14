@@ -238,3 +238,24 @@ Allows device user to put any app in Single App Mode, i.e. is user-initiated.
 - Warm users before performing irreversible actions (like deleting a thread)
 - Reduce dependence on timing; using timed alerts, automatically performing an action after a timeout are an anti-pattern to avoid
 - Always confirm payments
+
+
+## Single App Modes
+
+- All other SAMs enter SAM programmatically, not initiated by the user like Guided Access.
+- Prevent users from swiping home, modifying settings, looking things up in safari etc.
+
+
+### (Basic) Single App Mode
+- Good when you want to stay in single app forever on this device, i.e. kiosk food ordering scenario
+- Stay locked in app even after reboot
+- No manual intervention for upkeep of this mode
+- Device must be supervised via Apple Configurator (or other device management software)
+- This software can put many devices in SAM at one time
+- In Apple Configurator: select a device -> Advanced -> Start Single App Mode -> Select App to lock into
+
+### Autonomous Single App Mode (ASAM)
+- Good when restricted state needs to be entered and exited, i.e. medical scenario where we'd enter this mode when passing device to patient and exit when they return it to us
+- App makes API method call to get in and out of Single App Mode
+- Must ALSO be supervised via Apple Configurator (or other device management software)
+- App must also be allow-listed for ASAM in device's configuration profile
