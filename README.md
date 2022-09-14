@@ -259,3 +259,25 @@ Allows device user to put any app in Single App Mode, i.e. is user-initiated.
 - App makes API method call to get in and out of Single App Mode
 - Must ALSO be supervised via Apple Configurator (or other device management software)
 - App must also be allow-listed for ASAM in device's configuration profile
+- On failure, we might want to alert user in completion handler that we failed to lock down the app so they don't hand the device to the patient
+- Status change callbacks can invoke behaviors as you enter/exit ASAM mode
+
+### Assessment Mode
+- Restrict certain features like spell check during testing to avoid unfair advantages
+- Test takers also cannot access outside notes/resources, etc.
+- Unified API macOS / iOS
+- Does not require supervision (i.e. Apple Configurator)
+- But must apply to Apple for an assessment entitlement
+- Check out What's new in assessment for more info
+
+### Accessibility API
+- People using assistive technologies like VoiceOver or Switch Control may also use apps in Single App Modes
+Example: someone who is blind comes to order food on your kiosk app. How do they turn on VoiceOver?
+- Apple Configurator and other device management software let you configure accessibility options for SAMs
+- Accessibility shortcut is configurable to show a subset of iOS accessibility features
+- Some accessibility features can also be set to always enabled
+- This enables people who rely on these technologies to continue using them on them while using your app
+- These options must be configured before entering a SAM
+- You can also toggle features directly with code (i.e. while in a SAM)
+- Good for kiosk enclosure where hardware buttons are blocked, so Accessibility Shortcut is not available
+- API for turning off/on certain Accessibility features: Zoom , VO, Invert Colors, AST, Gray-scale
