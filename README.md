@@ -204,3 +204,11 @@ Persistent state
 - encapsulate your navigation state into a Codable model
 - use SceneStorage to save and restore that state
 - restore data via .task:
+
+##Single App Mode (SAM
+
+### What is a Single App Mode (SAM)?
+- Restrict certain behaviors on iOS / iPadOS
+- Lock device to single app
+- Initiated by system or app
+
