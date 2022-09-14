@@ -205,7 +205,7 @@ Persistent state
 - use SceneStorage to save and restore that state
 - restore data via .task:
 
-##Single App Mode (SAM
+## Single App Mode (SAM
 
 ### What is a Single App Mode (SAM)?
 - Restrict certain behaviors on iOS / iPadOS
