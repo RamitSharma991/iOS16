@@ -211,4 +211,30 @@ Persistent state
 - Restrict certain behaviors on iOS / iPadOS
 - Lock device to single app
 - Initiated by system or app
+- Allow control of timing between restricted and unrestricted state
+- Can also apply restrictions on top of single app mode (such as enabling/disabling auto-lock)
 
+### When do you use a Single App Mode?
+3 examples when you'd want a device in SAM: 
+- iPad used to place food orders at an event 
+- Device used in medical setting where patients are passed device from staff to fill out info 
+- Device used in school environment for students taking tests
+- 
+#### Another use case: Guided Access. Any user can put any app in Single App Mode
+
+### Guided Access
+Allows device user to put any app in Single App Mode, i.e. is user-initiated.
+
+### Developer considerations
+
+
+#### UIAccessibility API Custom Restrictions
+- Tailor experience in GAX by restriction parts of your app's functionality
+- Accommodate those with cognitive or learning disabilities, who might need a different experience within your app
+
+
+### Design principles for cognitive AX
+- Be forgiving of errors and mitigate them before they happen
+- Warm users before performing irreversible actions (like deleting a thread)
+- Reduce dependence on timing; using timed alerts, automatically performing an action after a timeout are an anti-pattern to avoid
+- Always confirm payments
