@@ -280,3 +280,5 @@ Example: someone who is blind comes to order food on your kiosk app. How do they
 - You can also toggle features directly with code (i.e. while in a SAM)
 - Good for kiosk enclosure where hardware buttons are blocked, so Accessibility Shortcut is not available
 - API for turning off/on certain Accessibility features: Zoom , VO, Invert Colors, AST, Gray-scale
+
+
