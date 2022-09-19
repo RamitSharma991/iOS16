@@ -7,6 +7,7 @@
 - Start with concrete types, generalize when needed
 
 
+
 ## Polymorphism
 
 - ability of abstract code to behave differently for different concrete types
