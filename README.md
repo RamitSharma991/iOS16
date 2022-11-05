@@ -261,6 +261,7 @@ Allows device user to put any app in Single App Mode, i.e. is user-initiated.
 - On failure, we might want to alert user in completion handler that we failed to lock down the app so they don't hand the device to the patient
 - Status change callbacks can invoke behaviors as you enter/exit ASAM mode
 
+
 ### Assessment Mode
 - Restrict certain features like spell check during testing to avoid unfair advantages
 - Test takers also cannot access outside notes/resources, etc.
